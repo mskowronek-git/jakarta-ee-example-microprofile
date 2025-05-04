@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDI - Jakarta EE for Java Developers examples</title>
+</head>
+<body>
+
+<h1>Jakarta EE for Java Developers examples on Wildfly bootable jar</h1>
+
+<h2>CDI examples</h2>
+
+<h2>Creating and injecting beans</h2>
+<a href="/api/cdi/request" target="_blank">CDI Request</a> <br/>
+<a href="/api/cdi/session" target="_blank">CDI Session</a> <br/>
+
+<h2>Conversation scoped beans</h2>
+<table>
+    <tr>
+        <th>Start</th>
+        <th>Add</th>
+        <th>End</th>
+    </tr>
+    <tr>
+        <td><a href="/api/cdi/conversation/start" target="_blank">Start conversation</a> <br/></td>
+        <td>
+            <form action="/api/cdi/conversation/add" method="get" target="_blank">
+                <label for="cid">cid:</label>
+                <input type="text" id="cid" name="cid"><br><br>
+                <input type="submit" value="Add item to conversationId cart">
+            </form>
+        </td>
+        <td>
+            <form action="/api/cdi/conversation/end" method="get" target="_blank">
+                <label for="cidend">cid:</label>
+                <input type="text" id="cidend" name="cid"><br><br>
+                <input type="submit" value="End conversation">
+            </form>
+        </td>
+    </tr>
+</table>
+
+
+<h2>Producer method</h2>
+<a href="/api/messages/method/append?message=my%20message%20is%20amazing" target="_blank">Append message to file</a>
+<br/>
+<a href="/api/messages/method/clean" target="_blank">Clean message file</a> <br/>
+
+<h2>Producer field</h2>
+<a href="/api/messages/field/append?message=my%20message%20is%20amazing" target="_blank">Append message to file</a>
+<br/>
+<a href="/api/messages/field/clean" target="_blank">Clean message file</a> <br/>
+
+<h2>Interceptor</h2>
+<a href="/api/authenticate/login?username=inaki&password=inaki" target="_blank">Login ok</a> <br/>
+<a href="/api/authenticate/login?username=inaki&password=foo" target="_blank">Login ko</a> <br/>
+
+<h2>Decorator</h2>
+<a href="/api/profit?income=100&spent=50" target="_blank">Profit</a> <br/>
+
+<h2>Events</h2>
+<a href="/api/email/async" target="_blank">Email async</a> <br/>
+<a href="/api/email/sync" target="_blank">Email sync</a> <br/>
+
+<h1>Back</h1>
+<a href="../index.html" target="_self">BACK</a> <br/>
+
+
+</body>
+</html>

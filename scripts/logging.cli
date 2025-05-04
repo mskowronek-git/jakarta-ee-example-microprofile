@@ -1,0 +1,19 @@
+### LOGGING
+
+# Change ROOT log level (server logs)
+#/subsystem=logging/root-logger=ROOT:write-attribute(name=level,value=DEBUG)
+
+# Change CONSOLE log level
+/subsystem=logging/console-handler=CONSOLE:write-attribute(name=level,value=ALL)
+
+# Change specific log level for a specific class
+/subsystem=logging/logger=com.example.hello.jakarta:add(level=INFO)
+/subsystem=logging/logger=com.example.hello.jakarta.rest.users:add(level=DEBUG)
+
+# Json formatting
+#/subsystem=logging/json-formatter=json-formatter:add(exception-output-type=formatted, pretty-print=false, meta-data={version="1"}, key-overrides={timestamp="@timestamp"})
+#/subsystem=logging/console-handler=CONSOLE:write-attribute(name=named-formatter, value=json-formatter)
+
+
+
+

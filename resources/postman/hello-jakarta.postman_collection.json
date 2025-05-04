@@ -1,0 +1,312 @@
+{
+  "info": {
+    "_postman_id": "ed7e4d26-c7ae-4cd3-b55a-3a047b2a1a51",
+    "name": "hello-jakarta",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "todos",
+      "item": [
+        {
+          "name": "get all",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/{{api}}/todo",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "todo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create todo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\" : \"{{$randomBs}}\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/{{api}}/todo",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "todo"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "objectmapper",
+      "item": [
+        {
+          "name": "Objectmapper examples",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/{{api}}/objectmapper",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "objectmapper"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "get list of users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/{{api}}/users",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find by id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/{{api}}/users/0c942906-e049-4ba2-87fd-57277a12f499",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "users",
+                "0c942906-e049-4ba2-87fd-57277a12f499"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find by email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/{{api}}/users?email=Clotilde_Pagac71@yahoo.com",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "Clotilde_Pagac71@yahoo.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"employeeType\": \"DEVELOPER\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/{{api}}/users",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "emails",
+      "item": [
+        {
+          "name": "Send email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"{{$randomFirstName}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"employeeType\": \"DEVELOPER\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{host}}/{{api}}/emails/{{idUser}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{api}}",
+                "emails",
+                "{{idUser}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
